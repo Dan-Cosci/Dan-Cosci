@@ -1,0 +1,36 @@
+/* =========================
+   COLOR VARIABLES - DARK THEME (HSL)
+   ========================= */
+
+/* Base background & surface colors */
+$color-bg-dark: hsl(220, 15%, 7%);      // main background (#121212)
+$color-bg-card: hsl(220, 15%, 12%);     // cards / sections (#1e1e1e)
+$color-bg-nav: hsl(220, 15%, 10%);      // navbar, header, footer (#1a1a1a)
+$color-bg-hover: hsl(220, 15%, 13%);    // hover states (#1f1f1f)
+
+/* Text colors */
+$color-text-primary: hsl(0, 0%, 88%);   // main text (#e0e0e0)
+$color-text-secondary: hsl(0, 0%, 70%); // secondary text (#b3b3b3)
+$color-text-muted: hsl(0, 0%, 55%);     // labels, hints (#8c8c8c)
+$color-text-inverse: hsl(0, 0%, 100%);  // for accent backgrounds (#ffffff)
+
+/* Accent colors (Powder Blue) */
+$color-accent: hsl(195, 100%, 84%);      // powder blue (#b0e0ff)
+$color-accent-hover: hsl(195, 100%, 75%); // slightly darker on hover (#99dfff)
+
+/* Borders & dividers */
+$color-border: hsl(220, 15%, 16%);       // (#2a2a2a)
+$color-border-light: hsl(220, 15%, 23%); // (#3a3a3a)
+
+/* Status / feedback */
+$color-success: hsl(120, 61%, 41%);      // (#4caf50)
+$color-warning: hsl(33, 100%, 58%);      // (#ff9800)
+$color-error: hsl(0, 78%, 57%);          // (#f44336)
+
+/* Semantic mapping */
+$bg-primary: $color-bg-dark;
+$bg-secondary: $color-bg-card;
+$text-primary: $color-text-primary;
+$text-secondary: $color-text-secondary;
+$accent: $color-accent;
+$accent-hover: $color-accent-hover;

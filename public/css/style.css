@@ -2,6 +2,15 @@
    TYPOGRAPHY - GOOGLE FONTS IMPORT
    ========================= */
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+/* =========================
+   COLOR VARIABLES - DARK THEME (HSL)
+   ========================= */
+/* Base background & surface colors */
+/* Text colors */
+/* Accent colors (Powder Blue) */
+/* Borders & dividers */
+/* Status / feedback */
+/* Semantic mapping */
 /* Box sizing */
 *,
 *::before,
@@ -87,34 +96,156 @@ table {
    ========================= */
 body {
   font-family: "Roboto", sans-serif;
+  color: hsl(0, 0%, 88%);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
+  color: hsl(0, 0%, 88%);
 }
 
 p, a, li {
   font-family: "Montserrat", sans-serif;
+  color: hsl(0, 0%, 88%);
 }
 
 code, pre {
   font-family: "Roboto Mono", monospace;
+  color: hsl(0, 0%, 88%);
 }
 
 /* =========================
    TYPOGRAPHY UTILS / MIXINS
    ========================= */
 /* Example: responsive font sizes, line-height helpers, etc. */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
   min-height: 100vh;
+  background-color: hsl(220, 15%, 7%);
+}
+
+#app {
+  height: 100%;
+  min-height: 100%;
+}
+
+.navbar {
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.navbar__t-c h1 {
+  color: hsl(195, 100%, 84%);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.navbar__t-c h1:hover, .navbar__t-c h1:focus {
+  color: hsl(195, 100%, 75%);
+  cursor: pointer;
+}
+.navbar__links {
+  padding: 1.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: rgba(26.01, 29.07, 35.19, 0.2);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  border-radius: 50rem;
+  position: relative;
+  transition: all 0.4s ease-out;
+}
+.navbar__links:hover, .navbar__links:focus {
+  box-shadow: 0px 2px 2rem rgba(127.5, 223.125, 255, 0.2);
+}
+.navbar__links ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+.navbar__links a {
+  display: inline-block;
+  transition: all 0.5s ease-out;
+}
+.navbar__links a:hover, .navbar__links a:focus {
+  color: hsl(195, 100%, 75%);
+  cursor: pointer;
 }
 
 header {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5vw;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(15.1725, 16.9575, 20.5275, 0.8), rgb(15.1725, 16.9575, 20.5275)), url("../images/bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__img-ct {
+  width: 25%;
+  aspect-ratio: 1/1;
+  border: 2px solid hsl(195, 100%, 84%);
+  border-radius: 50%;
+}
+.hero__img-ct img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+}
+.hero__text-ct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.hero__text-ct__title {
+  font-size: 5rem;
+  color: hsl(0, 0%, 88%);
+  line-height: 1.2;
+}
+.hero__text-ct__title span {
+  color: hsl(195, 100%, 84%);
+  font-weight: 600;
+}
+.hero__text-ct__title span:hover, .hero__text-ct__title span:focus {
+  color: hsl(195, 100%, 75%);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.hero__text-ct__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.hero__text-ct__links__button {
+  border: 2px solid white;
+  border-radius: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,17 @@
+@use "../abstracts" as *;
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     height: 100vh;
     min-height: 100vh;
+    background-color: $bg-primary;
+}
+
+#app{
+    height: 100%;
+    min-height: 100%;
 
 }

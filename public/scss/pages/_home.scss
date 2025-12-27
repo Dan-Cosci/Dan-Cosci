@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.hero{
+    @include flex-row;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: 
+        linear-gradient(to bottom, rgba($bg-primary,.8), rgba($bg-primary, 1)),
+        url("../images/bg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__img-ct{
+        width: 25%;
+        aspect-ratio: 1/1;
+        border: 2px solid $accent;
+        border-radius: 50%; 
+        img{
+            border-radius: 50%; 
+            object-fit: cover;
+            object-position: top;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__text-ct{
+        @include flex-column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        &__title{
+            font-size: 5rem;
+            color: $text-primary;
+            line-height: 1.2;
+            span{
+                color: $accent;
+                font-weight: 600;
+                &:hover, &:focus{
+                    color:$accent-hover;
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__links{
+            @include flex-row;
+            width: 100%;
+            justify-content: space-between;
+
+            &__button{
+                border: 2px solid white;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+
