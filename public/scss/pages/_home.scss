@@ -2,19 +2,20 @@
 
 .hero{
     @include flex-row;
+    min-height: 100vh;
     gap: 5vw;
     justify-content: center;
     align-items: center;
     height: 100%;
     background-image: 
-        linear-gradient(to bottom, rgba($bg-primary,.8), rgba($bg-primary, 1)),
-        url("../images/bg.svg");
+        linear-gradient(to bottom, rgba($bg-primary,.1), rgba($bg-primary, 1)),
+        url("../images/moving-bg.GIF");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     &__img-ct{
-        width: 25%;
+        width: calc(8vw + 10rem);
         aspect-ratio: 1/1;
         border: 2px solid $accent;
         border-radius: 50%; 
@@ -32,6 +33,27 @@
         align-items: flex-start;
         gap: 1rem;
 
+        &__loc{
+            @include flex-row;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            &__left{
+                p{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+
+            &__right{
+                @include flex-row;
+                align-items: center;
+                justify-content: center;
+                gap: .2rem;;
+            }
+        }
+
         &__title{
             font-size: 5rem;
             color: $text-primary;
@@ -45,18 +67,79 @@
                     cursor: pointer;
                 }
             }
+        }   
+        
+        &__subtitle{
+            font-size: 1rem;
+            max-width: 50ch;
+            line-height: 1.5;
+            margin-bottom: 1rem;
         }
 
         &__links{
             @include flex-row;
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            font-size: 1.2rem;
 
             &__button{
+                @include flex-center;
+                padding: .2rem .6rem;
                 border: 2px solid white;
-                border-radius: 1rem;
+                border-radius: 50rem;
+                transition: all .3s ease;
+                font-size: 1.2rem;
+                
+                
+
+                &:hover,
+                &:focus{
+                    background-color: $accent;
+                    border-color: $accent;
+                    color: black;
+                }
+
+            }
+
+            i {
+                font-size: 1.4rem;
+                margin: .3rem;
+
+                &:hover,
+                &:focus{
+                    color: $accent-hover;
+                }
             }
         }
     }
 }
 
+.languages{
+    height: auto;
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    &__grid-ct{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        width: 80%;
+
+        &__item{
+            @include flex-center;
+            img{
+                width: 40px;
+                height: 40px;
+                transition: all .3s ease;
+                &:hover{
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
