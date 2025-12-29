@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =========================
    TYPOGRAPHY - GOOGLE FONTS IMPORT
    ========================= */
@@ -183,10 +184,153 @@ body {
   cursor: pointer;
 }
 
+.footer {
+  background-color: hsl(220, 15%, 7%);
+  padding: 3rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+.footer__name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 88%);
+}
+.footer__role {
+  font-size: 0.95rem;
+  color: rgba(224.4, 224.4, 224.4, 0.7);
+}
+.footer__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.footer__links a {
+  font-size: 0.95rem;
+  color: hsl(0, 0%, 88%);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.footer__links a:hover, .footer__links a:focus {
+  color: hsl(195, 100%, 84%);
+}
+.footer__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: hsl(195, 100%, 84%);
+  transition: width 0.2s ease;
+}
+.footer__links a:hover::after {
+  width: 100%;
+}
+.footer__copyright {
+  font-size: 0.8rem;
+  color: rgba(224.4, 224.4, 224.4, 0.5);
+  margin-top: 0.5rem;
+}
+
 header {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem 2rem;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(to bottom, rgba(15.1725, 16.9575, 20.5275, 0.7), rgba(15.1725, 16.9575, 20.5275, 0.8)), url("../images/bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about__text-tc {
+  display: grid;
+  grid-template-areas: "t-1 t-1" "t-2 t-3" "t-4 t-5" "t-6 t-6";
+  gap: 1.3rem;
+  width: 80%;
+}
+.about__text-tc__section {
+  padding: 1rem;
+  transition: all 0.8s ease;
+  border-radius: 1.2rem;
+  border: none;
+}
+.about__text-tc__section p {
+  font-size: 1.2em;
+}
+.about__text-tc__section__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about__text-tc__section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.about__text-tc__section li {
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 88%);
+  position: relative;
+  padding-left: 1.4rem;
+  text-align: left;
+}
+.about__text-tc__section li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: hsl(195, 100%, 84%);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.about__text-tc__section:hover, .about__text-tc__section:focus {
+  background-color: rgba(173.4, 234.6, 255, 0.07);
+  transform: scale(1.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(173.4, 234.6, 255, 0.2);
+  cursor: pointer;
+}
+.about .t-1 {
+  grid-area: t-1;
+}
+.about .t-2 {
+  grid-area: t-2;
+}
+.about .t-3 {
+  grid-area: t-3;
+}
+.about .t-4 {
+  grid-area: t-4;
+}
+.about .t-5 {
+  grid-area: t-5;
+}
+.about .t-6 {
+  grid-area: t-6;
 }
 
 .hero {
@@ -197,7 +341,6 @@ header {
   gap: 5vw;
   justify-content: center;
   align-items: center;
-  height: 100%;
   background-image: linear-gradient(to bottom, rgba(15.1725, 16.9575, 20.5275, 0.1), rgb(15.1725, 16.9575, 20.5275)), url("../images/moving-bg.GIF");
   background-size: cover;
   background-position: center;
@@ -307,20 +450,24 @@ header {
   gap: 2rem;
   padding: 2rem 0;
 }
+.languages__title {
+  margin-top: 5rem;
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+}
 .languages__grid-ct {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   width: 80%;
 }
-.languages__grid-ct__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .languages__grid-ct__item img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: auto;
   transition: all 0.3s ease;
 }
 .languages__grid-ct__item img:hover {

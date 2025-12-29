@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+
+.about{
+    @include flex-center;
+    padding: 9rem 2rem;
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+    background-image: 
+    linear-gradient(to bottom,rgba($bg-primary, 0.7), rgba($bg-primary, 0.8)),
+    url("../images/bg.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__text-tc{
+        display: grid;
+        grid-template-areas: 
+        "t-1 t-1"
+        "t-2 t-3"
+        "t-4 t-5"
+        "t-6 t-6";
+        gap: 1.3rem;
+        width: 80%;
+        &__section{
+            padding:1rem;
+            transition: all .8s ease;
+            border-radius: 1.2rem;
+            border:none;
+
+            p{
+                font-size: 1.2em;
+            }
+
+            &__title{
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            li {
+                font-size: 1.2rem;
+                color: $text-primary;
+                position: relative;
+                padding-left: 1.4rem;
+                text-align: left;
+
+                &::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: $accent;
+                    font-size: 1.3rem;
+                    line-height: 1;
+                }
+            }
+
+            &:hover,
+            &:focus{
+                background-color: rgba($accent, .07);
+                transform: scale(1.05);
+                backdrop-filter: blur(5px);
+                border:1px solid rgba($accent, .2);
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .t-1{grid-area: t-1;}
+    .t-2{grid-area: t-2;}
+    .t-3{grid-area: t-3;}
+    .t-4{grid-area: t-4;}
+    .t-5{grid-area: t-5;}
+    .t-6{grid-area: t-6;}
+
+}
